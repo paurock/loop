@@ -1,0 +1,584 @@
+@import 'variables';
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: $light;
+  margin: 0;
+  padding: 0;
+  @include breakpoint(xs) {
+  overflow-x:hidden;
+  }
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+h2.title-h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  @include breakpoint(xs) {
+   font-size: 25px;
+  }
+}
+
+.btn {
+  margin-top: 40px;
+  width: 240px;
+  height: 50px;
+  background-color: $accent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &-xs {
+    width: 80px;
+    height: 30px;
+    margin-top: 20px;
+    background-image: url("img/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-position: 30px 12px;
+  }
+
+  &-center {
+    display: block;
+    text-align: center;
+    max-width: 220px;
+    max-height: 55px;
+    margin: 100px auto 0;
+    background-image: url("img/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-position: right 30px top 20px;
+  }
+}
+//HEADER BEGIN
+
+.page {
+  &-light {
+    background-color: $light;
+    color: $dark;
+  }
+
+  &-dark {
+    background-color: $dark;
+    color: $light;
+    width: 100%;
+  }
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  @include breakpoint(lg) {
+    justify-content: space-around;
+  }
+}
+
+nav {
+  @include breakpoint(lg) {
+    display: none;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding-left: 0;
+  @include breakpoint(lg) {
+    display: none;
+  }
+
+  &-item {
+    margin-right: 30px;
+  }
+
+  &-link {
+    color: $dark;
+    text-decoration: none;
+  }
+
+  &-info {
+    .nav-item {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+
+  &-bar {
+    position: absolute;
+    background-color: $accent;
+    top: 0;
+    right: 100%;
+    height: 100vh;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: position 2.9s;
+    -webkit-transition: position 2.9s;
+    -moz-transition: position 2.9s;
+    -ms-transition: position 2.9s;
+    -o-transition: position 2.9s;
+  }
+}
+
+.card {
+  background-image: url("img/card.svg");
+  padding-left: 55px;
+  padding-top: 15px;
+  height: 30px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+
+  &-count {
+    background-color: $accent;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 700;
+    padding: 0 15px;
+    position: relative;
+  }
+
+  &-count::before {
+    position: absolute;
+    left: -13px;
+    top: -3px;
+    content: "";
+    background-image: url("img/polygon.svg");
+    padding: 10px 15px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+  }
+}
+
+.card:hover {
+  cursor: pointer;
+}
+//HEADER END
+//MAIN SECTION BEGIN
+
+#main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 150px;
+  @include breakpoint(lg) {
+    flex-wrap: wrap;
+  }
+
+  .column-left {
+    flex: 0 0 50%;
+    @include breakpoint(lg) {
+      flex: 0 0 100%;
+      text-align: center;
+    }
+
+    h1 {
+      padding: 0;
+      margin: 30px 0 0;
+      font-size: 55px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    h3 {
+      padding: 0;
+      margin: 5px 0 0;
+      font-size: 30px;
+      font-weight: 400;
+      letter-spacing: 0.7px;
+    }
+  }
+
+  .column-right {
+    position: relative;
+    @include breakpoint(lg) {
+      flex: 0 0 100%;
+      max-width: 600px;
+      margin: 50px auto 0;
+    }
+
+    .item-image {
+      margin-top: -30px;
+      margin-left: 5px;
+
+      img {
+        width: 100%;
+        max-width: 556px;
+      }
+    }
+
+    .prices {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 0;
+      top: 0;
+      text-align: right;
+
+      .item-price-old {
+        font-size: 24px;
+        font-weight: 700;
+        padding-top: 10px;
+        letter-spacing: 1px;
+        padding: 10px;
+      }
+
+      .item-price-new {
+        font-size: 42px;
+        font-weight: 700;
+        color: $important;
+        padding-top: 10px;
+      }
+    }
+  }
+}
+//MAIN SECTION END
+//NOTICE SECTION BEGIN
+
+.notice {
+  height: 235px;
+  text-align: center;
+  margin-top: 130px;
+
+  &-title {
+    text-transform: uppercase;
+    padding-top: 80px;
+    letter-spacing: -1.1px;
+    margin-left: 20px;
+    @include breakpoint(xs) {
+      font-size:16px;
+    }
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  &-description {
+    font-size: 21px;
+    margin-left: 50px;
+    padding-top: 2px;
+    @include breakpoint(xs) {
+      font-size:13px;
+      margin-left: 0;
+      padding-top: 0;
+    }
+  }
+}
+//NOTICE SECTION END
+//COLLECTION BLOCK BEGIN
+
+.collection {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 42px;
+  height: 250px;
+  @include breakpoint(lg) {
+    flex-wrap: wrap;
+  }
+  @include breakpoint(xs) {
+   height: 470px;
+  }
+
+  &-item {
+    flex: 0 0 50%;
+    background-repeat: no-repeat;
+    background-size: 190px 171px;
+
+    @include breakpoint(lg) {
+      flex: 0 0 100%;
+      padding: 43px 0 63px;
+    }
+
+    &.man {
+      background-image: url("img/man.png");
+      background-position: right 30px top 40px;
+      @include breakpoint(xs) {
+       background-position: right 5px top 78px;
+      }
+    }
+
+    &.woman {
+      background-image: url("img/woman.png");
+      background-position: right 45px top 40px;
+      @include breakpoint(xs) {
+       background-position: right 5px top 78px;
+      }
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 24px;
+      @include breakpoint(lg) {
+        margin-left:20px;
+      }
+      @include breakpoint(xs) {
+       font-size: 18px;
+      }
+
+      span {
+        font-weight: 700;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      @include breakpoint(lg) {
+        margin-left:20px;
+      }
+      @include breakpoint(xs) {
+       font-size: 13px;
+      }
+    }
+    button {
+      @include breakpoint(lg) {
+        margin-left:20px;
+      }
+    }
+  }
+}
+//COLLECTION BLOCK END
+//PRODUCTS BLOCK BEGIN
+
+.page-products {
+  padding-top: 80px;
+  @include breakpoint(lg) {
+    padding-top: 280px;
+  }
+  @include breakpoint(xs) {
+    padding-top: 30px;
+  }
+  background-color: white;
+  min-height: 785px;
+  padding-bottom: 50px;
+}
+
+.product-item {
+  position: relative;
+  flex: 0 0 24%;
+  @include breakpoint(lg) {
+    flex: 0 0 49%;
+    margin-bottom: 20px;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    height: 25px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include breakpoint(lg) {
+      background-size: 100% 25px;
+    }
+  }
+
+  &::before {
+    background-image: url("img/upper-product-frame.svg");
+  }
+
+  &::after {
+    background-image: url("img/bottom-product-frame.svg");
+  }
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 100px;
+  margin-left: 15px;
+  @include breakpoint(lg) {
+    flex-wrap: wrap;
+  }
+  @include breakpoint(xs) {
+  margin-left:85px;
+  }
+}
+
+.product-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+.product-price {
+  color: $accent;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.btn-center span {
+  margin-right: 50px;
+}
+// PRODUCTS BLOCK END
+// FOOTER BEGIN
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  min-height: 311px;
+  padding-top: 65px;
+  @include breakpoint(lg) {
+  flex-wrap:wrap;
+  }
+  &-logo {
+    flex: 0 0 30%;
+    @include breakpoint(lg) {
+      flex: 0 0 100%;
+      padding: 0 0 20px 20px;
+    }
+  }
+
+  &-nav {
+    display: flex;
+
+    justify-content: space-between;
+    flex: 0 0 65%;
+    @include breakpoint(xs) {
+    flex-wrap: wrap;
+    }
+  }
+
+  &-list {
+    list-style-type: none;
+    line-height: 30px;
+    @include breakpoint(lg) {
+      flex: 0 0 25%;
+    }
+    @include breakpoint(xs) {
+      flex: 0 0 90%;
+      line-height: 50px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $gray;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    &-title {
+      font-size: 10px;
+      line-height: 13px;
+      font-weight: 700;
+      padding-bottom: 15px;
+    }
+
+    &-link img {
+      padding-right: 5px;
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+//SUBFOOTER
+
+.subfooter {
+  background-color: $gray-two;
+  height: 100px;
+  padding:0 30px;
+  @include breakpoint(xs) {
+  padding:0 10px;
+  }
+
+  &-text {
+    display: flex;
+    justify-content: space-between;
+    color: $dark;
+    padding-top: 30px;
+    @include breakpoint(xs) {
+    flex-direction: column;
+    }
+
+    &-right-link {
+      text-decoration: none;
+      color: $dark;
+    }
+  }
+}
+//TOGGLE MENU
+.toggle {
+  left: 0;
+  box-shadow: 1px 0 15px 2px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+
+  &-menu {
+    background-color: $dark;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 7px 12px;
+    cursor: pointer;
+    @include breakpoint (minlg) {
+      display: none;
+    }
+    @include breakpoint (xs) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .line1 {
+    background-color: #000000;
+    transform: scale(0.9) rotateZ(-45deg) translate(-6px, 4px);
+  }
+
+  .line2 {
+    display: none;
+  }
+
+  .line3 {
+    background-color: #000000;
+    transform: scale(0.9) rotateZ(45deg) translate(-6px, -4px);
+  }
+
+  .toggle-menu {
+    background-color: white;
+  }
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: transform 0.2s ease-out;
+  -webkit-transition: transform 0.2s ease-out;
+  -moz-transition: transform 0.2s ease-out;
+  -ms-transition: transform 0.2s ease-out;
+  -o-transition: transform 0.2s ease-out;
+}
+
+.nav-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 14px;
+
+  &-item {
+    text-align: center;
+    padding: 20px 0;
+  }
+}
